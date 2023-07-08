@@ -3,12 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OpentdbQuizeProviderService } from './services/quize/opentdb-quize-provider.service';
+import { OpentdbQuizeProviderService } from './services/opentdb-quize-provider.service';
 import { QUIZE_PROVIDER_TOKEN } from './services/quize-provider-token';
+import { QuizeComponent } from './quize/quize.component';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuizeComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
