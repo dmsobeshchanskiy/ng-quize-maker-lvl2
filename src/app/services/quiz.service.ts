@@ -30,10 +30,17 @@ export class QuizService {
     const questions = new Array<Question>();
     if (quize && quize.results?.length) {
       quize.results.forEach((item: OpentdbQuizItem) => {
-        const question = new Question(item.question, [...item.incorrect_answers, item.correct_answer],  item.correct_answer, '');
+        const question = new Question(item.question,
+                                      this.randomize([...item.incorrect_answers, item.correct_answer]), 
+                                      item.correct_answer,
+                                      '');
         questions.push(question);
       });
     }
     return questions;
+  }
+  
+  private randomize(questions: string[]): string[] {
+    return questions.sort(() => (Math.random() > .5) ? 1 : -1);
   }
 }
