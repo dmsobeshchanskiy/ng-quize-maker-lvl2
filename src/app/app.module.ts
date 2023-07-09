@@ -11,6 +11,7 @@ import { ResultsComponent } from './results/results.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { FormsModule } from '@angular/forms';
 import { QuestionComponent } from './question/question.component';
+import { BeautifyTextPipe } from './pipes/beautify-text.pipe';
 
 
 
@@ -20,7 +21,8 @@ import { QuestionComponent } from './question/question.component';
     QuizeComponent,
     ResultsComponent,
     SearchCriteriaComponent,
-    QuestionComponent
+    QuestionComponent,
+    BeautifyTextPipe
   ],
   imports: [
     BrowserModule,

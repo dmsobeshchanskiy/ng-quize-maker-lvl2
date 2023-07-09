@@ -1,4 +1,4 @@
-<p>{{question.text}}</p>
+<p>{{question.text | beautifyText}}</p>
 <div>
-    <button *ngFor="let answer of question.possibleAnswers">{{answer}}</button>
+    <button *ngFor="let answer of question.possibleAnswers">{{answer | beautifyText}}</button>
 </div>

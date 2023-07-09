@@ -1,6 +1,10 @@
-<app-search-criteria [categories]="(quizeCategory$ | async) || []"
-                    (createQuizeRequested)="onCreateQuizeRequested($event)">
-</app-search-criteria>
-<app-question *ngFor="let question of questions" [question]="question">
-</app-question>
+<div class="criteria">
+    <app-search-criteria [categories]="(quizeCategory$ | async) || []"
+                        (createQuizeRequested)="onCreateQuizeRequested($event)"></app-search-criteria>
+</div>
+
+<div *ngFor="let question of questions" class="question">
+    <app-question [question]="question"></app-question>
+</div>
+
 
