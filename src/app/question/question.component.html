@@ -1,4 +1,8 @@
 <p>{{question.text | beautifyText}}</p>
 <div>
-    <button *ngFor="let answer of question.possibleAnswers">{{answer | beautifyText}}</button>
+    <button *ngFor="let answer of question.possibleAnswers"
+        appHotTracking [keepSelected]="question.userAnswer === answer"
+        (click)="setAnswer(answer)">
+        {{answer | beautifyText}}
+    </button>
 </div>

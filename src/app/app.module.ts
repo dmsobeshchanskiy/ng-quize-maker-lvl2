@@ -11,7 +11,8 @@ import { ResultsComponent } from './results/results.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { FormsModule } from '@angular/forms';
 import { QuestionComponent } from './question/question.component';
-import { BeautifyTextPipe } from './pipes/beautify-text.pipe';
+import { BeautifyTextPipe } from './tools/beautify-text.pipe';
+import { HotTrackingDirective } from './tools/hot-tracking.directive';
 
 
 
@@ -22,7 +23,8 @@ import { BeautifyTextPipe } from './pipes/beautify-text.pipe';
     ResultsComponent,
     SearchCriteriaComponent,
     QuestionComponent,
-    BeautifyTextPipe
+    BeautifyTextPipe,
+    HotTrackingDirective
   ],
   imports: [
     BrowserModule,

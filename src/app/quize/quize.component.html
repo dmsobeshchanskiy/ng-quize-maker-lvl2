@@ -1,10 +1,12 @@
 <div class="criteria">
-    <app-search-criteria [categories]="(quizeCategory$ | async) || []"
+    <app-search-criteria [categories]="(quizeCategories$ | async) || []"
                         (createQuizeRequested)="onCreateQuizeRequested($event)"></app-search-criteria>
 </div>
 
 <div *ngFor="let question of questions" class="question">
-    <app-question [question]="question"></app-question>
+    <app-question [question]="question" (answered)="onAnswered()"></app-question>
 </div>
+
+<button *ngIf="allQuestionsAnswered" (click)="onSubmit()">Submit</button>
 
 
