@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
-import { QuizeDTO } from '../models/quize-DTO';
-import { QuizeCategoryDTO } from '../models/quize-category-DTO';
+import { OpentdbQuize } from '../models/opentdb-quize';
+import { OpentdbQuizeCategory } from '../models/opentdb-quize-category';
 
 export interface IQuizeProvider {
-    getQuizeCategories(): Observable<QuizeCategoryDTO[]>;
-    getQuizeQuestions(categoryId: number, difficulty: string): Observable<QuizeDTO>;
+    getQuizeCategories(): Observable<OpentdbQuizeCategory[]>;
+    getQuizeQuestions(categoryId: number, difficulty: string): Observable<OpentdbQuize>;
 }

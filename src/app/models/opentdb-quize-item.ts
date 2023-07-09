@@ -1,4 +1,4 @@
-export class QuizeItemDTO {
+export class OpentdbQuizeItem {
 
     constructor(public category: string,
                 public correct_answer: string,
