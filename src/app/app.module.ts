@@ -9,6 +9,8 @@ import { QUIZE_PROVIDER_TOKEN } from './services/quize-provider-token';
 import { QuizeComponent } from './quize/quize.component';
 import { ResultsComponent } from './results/results.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
+import { FormsModule } from '@angular/forms';
+import { QuestionComponent } from './question/question.component';
 
 
 
@@ -17,12 +19,14 @@ import { SearchCriteriaComponent } from './search-criteria/search-criteria.compo
     AppComponent,
     QuizeComponent,
     ResultsComponent,
-    SearchCriteriaComponent
+    SearchCriteriaComponent,
+    QuestionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     { provide: QUIZE_PROVIDER_TOKEN, useClass: OpentdbQuizeProviderService }

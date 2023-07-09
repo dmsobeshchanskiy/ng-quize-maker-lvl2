@@ -1,18 +1,24 @@
-<div class="criteria-root">
-    <div class="lookup-block">
-        <label for="categorySelect" class="label">Select category:</label>
-        <select name="categorySelect" id="categorySelect">
-            <option *ngFor="let category of categories" 
-                    value="category.id">{{category.name}}</option>
-        </select>
+<form #searchForm="ngForm">
+    <div class="criteria-root">
+        <div class="lookup-block">
+            <label for="categorySelect" class="label">Select category:</label>
+            <select name="categorySelect" id="categorySelect"
+                    [(ngModel)]="criteria.categoryId" min="0">
+                <option value="-1" class="placeholder">Select category</option>
+                <option *ngFor="let category of categories" 
+                        [value]="category.id">{{category.name}}</option>
+            </select>
+        </div>
+        <div class="lookup-block">
+            <label for="difficultySelect" class="label">Select difficulty:</label>
+            <select name="difficultySelect" id="difficultySelect"
+                    [(ngModel)]="criteria.difficulty" required>
+                <option value="" class="placeholder">Select difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <button id="createBtn" (click)="onCreate()" [disabled]="!searchForm.valid">Create</button>
     </div>
-    <div class="lookup-block">
-        <label for="difficultySelect" class="label">Select difficulty:</label>
-        <select name="difficultySelect" id="difficultySelect">
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-        </select>
-    </div>
-    <button id="createBtn" (click)="onCreate()">Create</button>
-</div>
+</form>

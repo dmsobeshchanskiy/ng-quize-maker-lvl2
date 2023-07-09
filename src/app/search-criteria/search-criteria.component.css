@@ -9,3 +9,7 @@
 .label {
     margin-right: 10px;
 }
+
+.placeholder {
+    color: gray;
+}
