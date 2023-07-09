@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IQuizeProvider } from './i-quize-provider';
+import { IQuizProvider } from './i-quiz-provider';
 import { Observable, map } from 'rxjs';
-import { OpentdbQuize } from '../models/opentdb-quize';
-import { OpentdbQuizeCategory } from '../models/opentdb-quize-category';
+import { OpentdbQuiz } from '../models/opentdb-quiz';
+import { OpentdbQuizCategory } from '../models/opentdb-quiz-category';
 import { OpentdbTrivia } from '../models/opentdb-trivia';
 
 @Injectable({
     providedIn: 'root'
 })
-export class OpentdbQuizeProviderService implements IQuizeProvider {
+export class OpentdbQuizProviderService implements IQuizProvider {
 
     constructor(private http: HttpClient) { }
     
-    public getQuizeCategories(): Observable<OpentdbQuizeCategory[]> {
+    public getQuizCategories(): Observable<OpentdbQuizCategory[]> {
         return this.http.get<OpentdbTrivia>("https://opentdb.com/api_category.php")
                 .pipe(map((trivia: OpentdbTrivia) => trivia.trivia_categories));
     }
     
-    public getQuizeQuestions(categoryId: number, difficulty: string): Observable<OpentdbQuize> {
+    public getQuizQuestions(categoryId: number, difficulty: string): Observable<OpentdbQuiz> {
         const url = `https://opentdb.com/api.php?amount=5&category=${categoryId}&difficulty=${difficulty}&type=multiple`;
-        return this.http.get<OpentdbQuize>(url);
+        return this.http.get<OpentdbQuiz>(url);
     }
 
 }

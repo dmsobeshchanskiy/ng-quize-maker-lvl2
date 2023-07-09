@@ -1,6 +1,7 @@
+<p><b>QUIZ MAKER</b></p>
 <div class="criteria">
-    <app-search-criteria [categories]="(quizeCategories$ | async) || []"
-                        (createQuizeRequested)="onCreateQuizeRequested($event)"></app-search-criteria>
+    <app-search-criteria [categories]="(quizCategories$ | async) || []"
+                        (createQuizRequested)="onCreateQuizRequested($event)"></app-search-criteria>
 </div>
 
 <div *ngFor="let question of questions" class="question">

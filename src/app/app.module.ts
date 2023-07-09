@@ -4,9 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OpentdbQuizeProviderService } from './services/opentdb-quize-provider.service';
-import { QUIZE_PROVIDER_TOKEN } from './services/quize-provider-token';
-import { QuizeComponent } from './quize/quize.component';
+import { OpentdbQuizProviderService } from './services/opentdb-quiz-provider.service';
+import { QUIZ_PROVIDER_TOKEN } from './services/quiz-provider-token';
+import { QuizComponent } from './quiz/quiz.component';
 import { ResultsComponent } from './results/results.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +19,7 @@ import { HotTrackingDirective } from './tools/hot-tracking.directive';
 @NgModule({
   declarations: [
     AppComponent,
-    QuizeComponent,
+    QuizComponent,
     ResultsComponent,
     SearchCriteriaComponent,
     QuestionComponent,
@@ -33,7 +33,7 @@ import { HotTrackingDirective } from './tools/hot-tracking.directive';
     FormsModule
   ],
   providers: [
-    { provide: QUIZE_PROVIDER_TOKEN, useClass: OpentdbQuizeProviderService }
+    { provide: QUIZ_PROVIDER_TOKEN, useClass: OpentdbQuizProviderService }
   ],
   bootstrap: [AppComponent]
 })

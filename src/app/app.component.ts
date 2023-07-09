@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'quize-maker-lvl2';
+  title = 'quiz-maker-lvl2';
 }

@@ -1,5 +1,5 @@
-import { OpentdbQuizeCategory } from './opentdb-quize-category';
+import { OpentdbQuizCategory } from './opentdb-quiz-category';
 
 export class OpentdbTrivia {
-    constructor(public trivia_categories: OpentdbQuizeCategory[]) {}
+    constructor(public trivia_categories: OpentdbQuizCategory[]) {}
 }

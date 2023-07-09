@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { OpentdbQuizeCategory } from '../models/opentdb-quize-category';
-import { QuizeCriteria } from '../models/quize-criteria';
+import { OpentdbQuizCategory } from '../models/opentdb-quiz-category';
+import { QuizCriteria } from '../models/quiz-criteria';
 
 @Component({
   selector: 'app-search-criteria',
@@ -8,17 +8,17 @@ import { QuizeCriteria } from '../models/quize-criteria';
   styleUrls: ['./search-criteria.component.css']
 })
 export class SearchCriteriaComponent {
-  @Input() public categories: OpentdbQuizeCategory[];
-  @Output() public createQuizeRequested = new EventEmitter<QuizeCriteria>();
+  @Input() public categories: OpentdbQuizCategory[];
+  @Output() public createQuizRequested = new EventEmitter<QuizCriteria>();
 
-  public criteria: QuizeCriteria;
+  public criteria: QuizCriteria;
   
   constructor() {
-    this.categories = new Array<OpentdbQuizeCategory>();
-    this.criteria = new QuizeCriteria(-1, '');
+    this.categories = new Array<OpentdbQuizCategory>();
+    this.criteria = new QuizCriteria(-1, '');
   }
 
   public onCreate(): void {
-    this.createQuizeRequested.emit(this.criteria);
+    this.createQuizRequested.emit(this.criteria);
   }
 }

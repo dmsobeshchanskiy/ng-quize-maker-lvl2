@@ -1,4 +1,4 @@
-export class QuizeCriteria {
+export class QuizCriteria {
     constructor(public categoryId: number,
                 public difficulty: string) {
     }
