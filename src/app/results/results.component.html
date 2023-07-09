@@ -1,1 +1,15 @@
-<p>results works!</p>
+<p><b>RESULTS</b></p>
+<div *ngIf="anweredQuestions.length else noAnswers">
+    <app-result *ngFor="let answeredQuestion of anweredQuestions" 
+                [question]="answeredQuestion">
+    </app-result>
+    <div class="score" [class]="scoreClass">
+        <label>You scored {{score}} out of {{anweredQuestions.length}}</label>
+    </div> 
+</div>
+
+<button (click)="onCreateNewQuizRequested()">Create a new quiz</button>
+
+<ng-template #noAnswers>
+    <p>No inforamtion about answers for quiz!</p>
+</ng-template>

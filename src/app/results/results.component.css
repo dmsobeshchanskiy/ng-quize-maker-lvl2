@@ -1,0 +1,17 @@
+.score {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    max-width: 200px;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
