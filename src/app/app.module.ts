@@ -9,7 +9,7 @@ import { QUIZ_PROVIDER_TOKEN } from './services/quiz-provider-token';
 import { QuizComponent } from './quiz/quiz.component';
 import { ResultsComponent } from './results/results.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuestionComponent } from './question/question.component';
 import { BeautifyTextPipe } from './tools/beautify-text.pipe';
 import { HotTrackingDirective } from './tools/hot-tracking.directive';
@@ -32,7 +32,8 @@ import { ResultComponent } from './result/result.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: QUIZ_PROVIDER_TOKEN, useClass: OpentdbQuizProviderService }
