@@ -2,8 +2,8 @@
 <div>
     <button *ngFor="let answer of question.possibleAnswers"
         [disabled]="true"
-        [ngClass]="{ red: answer === question.userAnswer && answer !== question.correctAnswer,
-                    green: answer === question.correctAnswer }">
+        [ngClass]="{ incorrect: answer === question.userAnswer && answer !== question.correctAnswer,
+                    correct: answer === question.correctAnswer }">
         {{answer | beautifyText}}
     </button>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnswersService } from '../services/answers.service';
 import { Question } from '../models/question';
@@ -6,7 +6,8 @@ import { Question } from '../models/question';
 @Component({
   selector: 'app-results',
   templateUrl: './results.component.html',
-  styleUrls: ['./results.component.css']
+  styleUrls: ['./results.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ResultsComponent {
 
@@ -16,7 +17,7 @@ export class ResultsComponent {
 
   constructor(private router: Router,
               private answerService: AnswersService) {
-      this.anweredQuestions = this.answerService.getAnsweredQuestions();
+      this.anweredQuestions = this.answerService.getAnsweredQuestions() || [];
       this.calcScore();
   }
 

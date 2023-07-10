@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OpentdbQuizCategory } from '../models/opentdb-quiz-category';
 import { QuizCriteria } from '../models/quiz-criteria';
@@ -7,7 +7,8 @@ import { QuizCriteria } from '../models/quiz-criteria';
 @Component({
   selector: 'app-search-criteria',
   templateUrl: './search-criteria.component.html',
-  styleUrls: ['./search-criteria.component.css']
+  styleUrls: ['./search-criteria.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchCriteriaComponent {
   @Input() public categories: OpentdbQuizCategory[];
