@@ -19,6 +19,6 @@
                 <option value="hard">Hard</option>
             </select>
         </div>
-        <button id="createBtn" type="submit" [disabled]="!criteriaForm.valid">Create</button>
+        <button id="createBtn" type="submit" [disabled]="!criteriaForm.valid || loading">Create</button>
     </div>
 </form>

@@ -12,6 +12,7 @@ import { QuizCriteria } from '../models/quiz-criteria';
 })
 export class SearchCriteriaComponent {
   @Input() public categories: OpentdbQuizCategory[];
+  @Input() public loading = false;
   @Output() public createQuizRequested = new EventEmitter<QuizCriteria>();
 
   public criteriaForm: FormGroup;

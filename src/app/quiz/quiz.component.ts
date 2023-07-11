@@ -19,6 +19,8 @@ export class QuizComponent implements OnDestroy {
   public questions: Question[];
   public allQuestionsAnswered = false;
 
+  public loading = false;
+
   private subscription?: Subscription;
   
   constructor(private quizService: QuizService,
@@ -33,8 +35,12 @@ export class QuizComponent implements OnDestroy {
   }
 
   public onCreateQuizRequested(criteria: QuizCriteria): void {
+    this.loading = true;
     this.subscription = this.quizService.getQuizQuestions(criteria.categoryId, criteria.difficulty)
-                  .subscribe((questions: Question[]) => this.questions = questions);
+                  .subscribe((questions: Question[]) => {
+                    this.questions = questions;
+                    this.loading = false;
+                  });
   }
 
   public onAnswered(): void {
