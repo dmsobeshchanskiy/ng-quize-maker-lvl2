@@ -7,8 +7,8 @@ export class BeautifyTextPipe implements PipeTransform {
 
   public transform(value: string): string {
     if (!value) return '';
-    return value.replaceAll('&quot;', '\"')
-                .replaceAll('&#039;', '\'');
+    return value.replace(/&quot;/gi, '\"')
+                .replace(/&#039;/gi, '\'');
   }
 
 }
